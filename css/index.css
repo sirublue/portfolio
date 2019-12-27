@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 기본 style */
-.section{width:100%;height:800px;display:flex;justify-content:center;align-items:center;}
+.section{width:100%;height:100vh;display:flex;justify-content:center;align-items:center;}
 .section:nth-of-type(2n+1){background:#f5f5f5;}
 .container{width:960px;margin:0 auto;}
 .section>.container{width:960px;margin:0 auto;display:flex;flex-direction:column;justify-content:space-around;align-items:center;}
@@ -24,7 +24,7 @@ p{color:#a9a9a9;}
 .grid12{width:960px;padding-left:10px;padding-right:10px;}
 
 /* header style */
-header{position:fixed;left:0;top:0;width:100%;height:100px;z-index:10;transition:0.3s;}
+header{position:fixed;left:0;top:0;width:100%;height:100px;z-index:100;transition:0.3s;}
 header.active{background:white;height:60px;box-shadow:0 1px 1px #fb2274;}
 header.active>.container>#nav>ul>li>a{color:#444;}
 header>.container{display:flex;justify-content:space-between;height:100%;}
@@ -39,57 +39,52 @@ header>.container>#nav>ul>li>a{font-family: 'Roboto', sans-serif;font-size:16px;
 .section#home{background:url(../images/code02.jpg) no-repeat center center;background-size:cover;background-attachment:fixed;}
 .section#home>.container{height:300px;}
 .section#home>.container>h1{font-family: 'Roboto', sans-serif;color:white;font-size:48px;text-shadow:#fb2274 1px 1px;position:relative;}
-/* 가상요소
+/* 가상요소 */
 .section#home>.container>h1::before{content:"Lee Jina Portfolio";color:#444;position:absolute;left:0;top:0;transform:translateX(-100%);opacity:0;transition:0.3s;}
 .section#home>.container>h1:hover::before{transform:translateX(0);opacity:1;}
 .section#home>.container>h1::after{content:"Lee Jina Portfolio";color:transparent;-webkit-text-stroke:1px #fb2274;position:absolute;left:0;top:0;transform:translateX(0);opacity:1;transition:0.3s;}
-.section#home>.container>h1:hover::after{transform:translateX(100%);opacity:0;} */
-.section#home>.container>p{color:#aaa;background:rgba(0,0,0,0.3);padding:10px;}
+.section#home>.container>h1:hover::after{transform:translateX(100%);opacity:0;}
+.section#home>.container>p{color:#aaa;background:rgba(0,0,0,0.3);padding:20px;}
 
 /* about section style */
-.section#about{height:400px;padding:20px 0;}
+.section#about{padding:20px 0;}
 .section#about>.container{height:100%;padding:50px 0;}
 .section#about>.container>p{text-align:center;}
 .section#about>.container>button{cursor:pointer;}
 
 /* skill section style */
-.section#skill{padding:20px 0;height:560px;}
-.section#skill>.container{height:100%;padding:50px 0}
+.section#skill{padding:20px 0;}
+.section#skill>.container{height:520px;padding:50px 0}
 .section#skill>.container>ul{width:100%;display: flex;justify-content: space-between;}
 .section#skill>.container>ul>li{display:flex;flex-direction:column;align-items:center;}
-.section#skill>.container>ul>li>img{width:100%;}
-.section#skill>.container>ul>li>.progressBase{position: relative;width:100%;height:10px;border:1px solid #cccccc;}
-.section#skill>.container>ul>li>.progressBase>.progressBar{position: absolute;left:0;top:0;height:100%;width:0;transition:0.5s;}
-.section#skill>.container>ul>li>.progressBase>.progressBar01{background:red;}
-.section#skill>.container>ul>li>.progressBase>.progressBar02{background:green;}
-.section#skill>.container>ul>li>.progressBase>.progressBar03{background:blue;}
-.section#skill>.container>ul>li>.progressBase>.progressBar04{background:yellow;}
+/* .section#skill>.container>ul>li>img{width:100%;} */
+.section#skill>.container>ul>li>svg{font-size:100px;margin-bottom:30px;}
+.section#skill>.container>ul>li>.progressBase{position: relative;width:100%;height:20px;border:1px solid #ddd;}
+.section#skill>.container>ul>li>.progressBase>.progressBar{position: absolute;left:0;top:0;height:100%;width:0;background:#fb2274;}
+.section#skill>.container>ul>li>.progressBase>.progressper{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);}
 .section#skill:hover>.container>ul>li>.progressBase>.progressBar01{animation:probar01 0.5s;animation-fill-mode:both;animation-delay:0;}
 .section#skill:hover>.container>ul>li>.progressBase>.progressBar02{animation:probar02 0.5s;animation-fill-mode:both;animation-delay:0.25s;}
 .section#skill:hover>.container>ul>li>.progressBase>.progressBar03{animation:probar03 0.5s;animation-fill-mode:both;animation-delay:0.5s;}
 .section#skill:hover>.container>ul>li>.progressBase>.progressBar04{animation:probar04 0.5s;animation-fill-mode:both;animation-delay:0.75s;}
-@keyframes probar01{from{width:0;}to{width:80%;}}
-@keyframes probar02{from{width:0;}to{width:70%;}}
+@keyframes probar01{from{width:0;}to{width:70%;}}
+@keyframes probar02{from{width:0;}to{width:80%;}}
 @keyframes probar03{from{width:0;}to{width:90%;}}
-@keyframes probar04{from{width:0;}to{width:60%;}}
-
+@keyframes probar04{from{width:0;}to{width:70%;}}
 
 /* portfolio style */
-.section#portfolio{height:600px;}
 .swiper-container{width:100%;padding-top:50px;padding-bottom:50px;}
 .swiper-slide{background-position:center;background-size:cover;width:500px;height:289px;}
-
-.swiper-slide>.swiper-txt>a{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-flow:column nowrap;justify-content:flex-start;align-items:center;padding-top:30px;}
+.swiper-slide>.swiper-txt{position:absolute;top:0;left:0;width:100%;height:90%;display:flex;flex-flow:column nowrap;justify-content:flex-start;align-items:center;}
+.swiper-slide>.swiper-txt>a{width:100%;height:100%;padding-left:20px;padding-top:10px;}
 .swiper-slide>.swiper-txt>a>h3{font-size:1.5em;color:#444;}
 .swiper-slide>.swiper-txt>a>p{text-shadow:white 1px 1px 1px;color:#fb2274;}
-/* .swiper-slide>a.link{position:absolute;left:0;bottom:0;color:#eee;font-size:10px;} */
+.swiper-slide>a:nth-child(2){position:absolute;left:0;bottom:0;color:#eee;font-size:10px;}
 
 /* message style */
-.section#message{height:650px;}
 .section#message>.container{height:520px;}
 .section#message>.container>form{display:flex;flex-flow:column;justify-content:space-between;height:400px;}
 .section#message>.container>form>div{display:flex;justify-content:space-between;margin-top:8px;}
-.section#message>.container>form>div>label{font-size:24px;color:#a9a9a9;}
+.section#message>.container>form>div>label{font-size:24px;color:#a9a9a9;display:flex;justify-content: center;align-items: center;}
 .section#message>.container>form>div>input:focus{border-color:#fb2274;}
 .section#message>.container>form>div>input::placeholder{color:#fb2274;transition:0.3s;}
 .section#message>.container>form>div>input:focus::placeholder{color:transparent;}
