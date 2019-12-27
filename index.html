@@ -20,11 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Allura&display=swap&subset=latin-ext" rel="stylesheet">
     <!-- 스크립트 -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/smoothScroll.min.js"></script>
+    <script src="js/jquery.smoothscroll.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/swiper.min.js"></script>
-    <script src="js/custom.min.js"></script>
+    <script src="js/custom.js"></script>
     <!-- 스타일 -->
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/all.min.css">
@@ -35,10 +35,10 @@
     <div id="wrap">
 
         <!-- header -->
-        <header class="clearfix">
+        <header>
             <div class="container">
                 <div id="logo" class="grid03">
-                    <a href="#">LeeJina porfolio</a>
+                    <a href="index.html">LeeJina portfolio</a>
                 </div>
                 <div id="nav" class="grid06">
                     <ul>
@@ -72,41 +72,61 @@
             </div>
         </section>
 
-        <section class="section" id="skill">
+        <!-- skill section -->
+        <section class="section" id="skill" onmouseleave="skillleave();" onmouseenter="skillenter();">
             <div class="container">
                 <h2>Skill</h2>
                 <ul>
                     <li class="grid03">
-                        <img src="images/photoshop.png" alt="Web Graphic">
+                        <!-- <img src="images/photoshop.png" alt="Web Graphic"> -->
+                        <i class="fab fa-adobe"></i>
                         Web Graphic(PhotoShop/Illustrator)
                         <div class="progressBase">
                             <div class="progressBar progressBar01"></div>
+                            <p class="progressper progressper01">0%</p>
                         </div>
                     </li>
                     <li class="grid03">
-                        <img src="images/html.png" alt="Html">
+                        <!-- <img src="images/html.png" alt="Html"> -->
+                        <i class="fab fa-html5"></i>
                         HTML
                         <div class="progressBase">
                             <div class="progressBar progressBar02"></div>
+                            <p class="progressper progressper02">0%</p>
                         </div>
                     </li>
                     <li class="grid03">
-                        <img src="images/css.png" alt="CSS">
+                        <!-- <img src="images/css.png" alt="CSS"> -->
+                        <i class="fab fa-css3-alt"></i>
                         CSS
                         <div class="progressBase">
                             <div class="progressBar progressBar03"></div>
+                            <p class="progressper progressper03">0%</p>
                         </div>
                     </li>
                     <li class="grid03">
-                        <img src="images/javascript.jpg" alt="JS/jQuery">
+                        <!-- <img src="images/javascript.jpg" alt="JS/jQuery"> -->
+                        <i class="fab fa-node-js"></i>
                         JS/jQuery
                         <div class="progressBase">
                             <div class="progressBar progressBar04"></div>
+                            <p class="progressper progressper04">0%</p>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
+        <script>
+            //스킬 마우스리브
+            function skillleave(){
+                var proarray=document.querySelectorAll('.progressper');
+                for(pInx=0;pInx<=3;pInx++){
+                    proarray[pInx].innerText='0%'
+                }
+            }
+        </script>
+
+        <!-- portfolio section -->
         <section class="section" id="portfolio">
             <div class="container">
                 <h2>Portfolio</h2>
@@ -114,39 +134,51 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" style="background-image:url(images/portfolio01.png);">
                             <div class="swiper-txt">
-                                <a href="https://pam7461.github.io/megabox/">
+                                <a href="https://sirublue.github.io/megabox/" target="_blank">
                                     <h3>메가박스 반응형 리뉴얼</h3>
                                     <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
                                 </a>    
                             </div>
-                            <!-- <a class="link" href="https://www.freepik.com/free-photos-vectors/mockup">Mockup psd created by rawpixel.com - www.freepik.com</a> -->
+                            <a href="https://www.freepik.com/free-photos-vectors/mockup" target="_blank">Mockup psd created by rawpixel.com - www.freepik.com</a>
                         </div>
                         <div class="swiper-slide" style="background-image:url(images/portfolio02.png);">
-                            <a href="https://pam7461.github.io/hollys/">
-                                <div class="swiper-txt">
+                            <div class="swiper-txt">
+                                <a href="https://sirublue.github.io/hollys/" target="_blank">
                                     <h3>할리스커피 반응형 리뉴얼</h3>
                                     <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
-                                </div>
-                            </a>
-                            <a class="link" href="https://www.freepik.com/free-photos-vectors/mockup">Mockup psd created by rawpixel.com - www.freepik.com</a>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(images/portfolio01.png);">
-                            <div class="swiper-txt">
-                                <h3>메가박스 반응형 리뉴얼</h3>
-                                <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
+                                </a>
                             </div>
-                            <a class="link" href="https://www.freepik.com/free-photos-vectors/mockup">Mockup psd created by rawpixel.com - www.freepik.com</a>
+                            <a href="https://www.freepik.com/free-photos-vectors/mockup" target="_blank">Mockup psd created by rawpixel.com - www.freepik.com</a>
                         </div>
-                        <div class="swiper-slide" style="background-image:url(images/portfolio02.png);">
+                        <div class="swiper-slide" style="background-image:url(images/portfolio03.png);">
                             <div class="swiper-txt">
-                                <h3>메가박스 반응형 리뉴얼</h3>
-                                <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
+                                <a href="https://sirublue.github.io/hansol/" target="_blank">
+                                    <h3>한솔제지 반응형 리뉴얼</h3>
+                                    <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
+                                </a>
                             </div>
-                            <a class="link" href="https://www.freepik.com/free-photos-vectors/mockup">Mockup psd created by rawpixel.com - www.freepik.com</a>
+                            <a href="https://www.freepik.com/free-photos-vectors/mockup" target="_blank">Mockup psd created by rawpixel.com - www.freepik.com</a>
                         </div>
-                    </div>
+                        <div class="swiper-slide" style="background-image:url(images/portfolio04.png);">
+                            <div class="swiper-txt">
+                                <a href="https://sirublue.github.io/seoul/" target="_blank">
+                                    <h3>서울시-내손안에서울 반응형 리뉴얼</h3>
+                                    <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
+                                </a>
+                            </div>
+                            <a href="https://www.freepik.com/free-photos-vectors/mockup" target="_blank">Mockup psd created by rawpixel.com - www.freepik.com</a>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(images/portfolio05.png);">
+                            <div class="swiper-txt">
+                                <a href="https://sirublue.github.io/kakaot/" target="_blank">
+                                    <h3>카카오T 반응형 리뉴얼</h3>
+                                    <p>PhotoShop/HTML5/CSS3/javaScript/jQeury</p>
+                                </a>
+                            </div>
+                            <a href="https://www.freepik.com/free-photos-vectors/mockup" target="_blank">Mockup psd created by rawpixel.com - www.freepik.com</a>
+                        </div>                    </div>
                     <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
             </div>
         </section>
@@ -188,7 +220,30 @@
                 <div>E-mail : sirublue@naver.com</div>
                 <div>Phone : +82 10-9256-2486</div>
             </div>
+            <a href="images/html.png" style="color:white" download>download</a>
         </footer>
     </div>
 </body>
+<script>
+    //스킬 마우스엔터
+    function skillenter(){
+        var proarray=document.querySelectorAll('.progressper');
+        var perCent=0;
+        var addper=setInterval(setper,10);
+
+        function setper(){
+            perCent++;
+            if(perCent<=70){
+                for(pInx=0;pInx<=3;pInx++){
+                    proarray[pInx].innerText=perCent +'%';
+                }
+            }else if(perCent<=80){
+                proarray[1].innerText=perCent +'%';
+                proarray[2].innerText=perCent +'%';
+            }else if(perCent<=90){
+                proarray[2].innerText=perCent +'%';
+            }else{clearInterval(addper)}
+        }
+    }
+</script>
 </html>
